@@ -15,6 +15,7 @@
 <!-- Footer(s) -->
 <!-- Scripts -->
 
+
 	<footer id="footer">
 		<ul class="copyright">
 			<li>사업자등록번호 : 000-00-00000 | 통신판매업신고번호 : 2018-서울00-00000 |</li>

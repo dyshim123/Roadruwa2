@@ -149,7 +149,7 @@
 	insert into board_day(b_num,b_day,b_trav,b_food,b_trans,b_stay,b_cont,b_post) values(#{bNum},#{bDay},#{bTrav},#{bFood},#{bTrans},#{bStay},#{bCont},#{bPost})
 	</insert> 
 	
-	<insert id="boardinsert"  parameterType="BoardVo" useGeneratedKeys="true" keyProperty="bNum">
+		<insert id="boardinsert"  parameterType="BoardVo" useGeneratedKeys="true" keyProperty="bNum">
 	  insert into board(b_title, b_pic1, b_pic2, b_pic3, b_cate, b_lo, b_tr, b_day1, b_day2, b_one, b_ac, u_id, b_price, b_create_dt, appr)
 	   values(#{bTitle}, #{bPic1}, #{bPic2}, #{bPic3}, #{bCate}, #{bLo}, #{bTr}, #{bDay1}, #{bDay2}, #{bOne}, 0, #{uId}, 0, current_timestamp, '미승인')
 	</insert>

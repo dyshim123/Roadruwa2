@@ -264,6 +264,6 @@
 			</div>
 		</div>
 	</div>
-</div>
+	</div>
 	<script src="../../../assets/js/jquery.modal.js"></script>
 	<%@ include file="myFooter.jsp"%>

@@ -46,10 +46,9 @@ public class mypageController {
 	@RequestMapping("/myPage.do")
 	public String myPage(Model model, HttpSession session) {
 		String u_id = (String)session.getAttribute("u_id");
-		List<BoardVo> myWrite = boardService.myWrite(u_id);
+		//List<BoardVo> myWrite = boardService.myWrite(u_id);
 		PointVo point = pointSerivce.points(u_id);
 		model.addAttribute("point", point);
-		model.addAttribute("myWrite", myWrite);
 		return "myPage/myPage";
 	}
 
@@ -57,9 +56,8 @@ public class mypageController {
 	public String myBuy(Model model, HttpSession session) {
 		String u_id = (String)session.getAttribute("u_id");
 		PointVo point = pointSerivce.points(u_id);
-		List<BoardVo> buyList = boardService.buyList(u_id);
+		//List<BoardVo> buyList = boardService.buyList(u_id);
 		model.addAttribute("point", point);
-		model.addAttribute("buyList", buyList);
 		return "myPage/myBuy";
 	}
 

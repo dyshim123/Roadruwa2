@@ -59,7 +59,7 @@
 	</div>
 	<!-- head -->
 	<br><br>
-<script>
+	<script>
     function sendFile(file, el) {
       var form_data = new FormData();
       form_data.append('file', file);
@@ -229,7 +229,7 @@
 				</div>
 			</div>
 			<br>
-			<script>
+				<script>
 				function toggle(box, d1, d2) {
 					if (document.getElementById) {
 						var d1 = document.getElementById(d1);
@@ -506,17 +506,17 @@
 
 	<!-- Scripts -->
 	<script src="../../assets/js/jquery.min.js"></script>
-	<script src="../../assets/js/breakpoints.min.js"></script>
-	<script src="../../assets/js/writeForm.js"></script>
-	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-	<script
-		src="http://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
-	<script
-		src="http://netdna.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.js"></script>
-	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
-	<script src="//netdna.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.js"></script>
-	<script
-		src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.8/summernote.js"></script>
-	<script src="../../assets/js/summernote.js"></script>
+<script src="../../assets/js/breakpoints.min.js"></script>
+<script src="../../assets/js/writeForm.js"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script
+	src="http://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+<script
+	src="http://netdna.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.js"></script>
+<script
+	src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.8/summernote.js"></script>
+<script src="../../assets/js/summernote.js"></script>
 
-	<%@ include file="footer.jsp"%>
+<%@ include file="footer.jsp"%>
