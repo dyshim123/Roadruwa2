@@ -7,7 +7,23 @@
 <link rel="stylesheet" href="../../../assets/css/jquery.modal.css" />
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<br><br>
+<script src="http://malsup.github.com/jquery.form.js"></script>
+<script>
+function upFile(){
+		frm = document.excelUploadForm;
+		frm.action = "/excelUploadAjax.do";
+		frm.submit();	
+} 
+
+</script>
+
+<br><br><div align="center"><form name="excelUploadForm" id="excelUploadForm" enctype="multipart/form-data" method="post">
+                                      첨부 파일<input type="file"  name="excelFile" id="excelFile" />
+                     <input type="hidden" name="svcId" value="${param.svcId}" />
+                     <!-- <button type="button" id="addExcelImpoartBtn" class="btn" onclick="check()" ><span>추가</span></button> -->
+                  <input type="button" class="btn btn-primary" value="추가" onclick="upFile()" /> 
+		
+		</form></div>
 <table class="table" style="display: inline-table; width:70%; margin-left:450px;">
 		<thead>
 			<tr>
@@ -31,5 +47,6 @@
 			</c:forEach>
 		</tbody>
 	</table>
+	
 	<script src="../../../assets/js/jquery.modal.js"></script>
 <%@ include file="footer.jsp" %>

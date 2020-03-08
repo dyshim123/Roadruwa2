@@ -14,17 +14,11 @@ public interface UserDao {
 
 	public int write(UserVo vo);
 	
-//	public int updateAuthkey(UserVo vo);
-//	
-//	public int updateAuthstatus(@Param("uId") String uId);
-	
 	public UserVo getUserCheck(@Param("uName") String uName, @Param("uEmail") String uEmail);
 	
 	public UserVo IdCheck(@Param("uId") String uId);
 	
 	public List<UserVo> memberList(@Param("u_id") String u_id);
-	
-	/* public int UpdateUserVo(UserVo vo); */
 	
 	public int DeleteUserVo(@Param("uId") String uId);
 	

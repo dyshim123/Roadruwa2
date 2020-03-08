@@ -83,22 +83,24 @@ $(function(){
 <br><br><br>
 <form method="get" action="searchPw.do">
 	<table class="table" style="width: 30%;">
-		<tr><td colspan="2" style="padding-bottom: 0px;"><h3>
-				<b>비밀번호 찾기</b>
-			</h3></td></tr>
+		<tr>
+			<td colspan="2" style="padding-bottom: 0px;"><h3>
+					<b>비밀번호 찾기</b>
+				</h3></td>
+		</tr>
 		<tr>
 			<td>아이디</td>
-			<td><input type="text" name="uId" id="uId" size="18">
-			</td>
+			<td><input type="text" name="uId" id="uId" size="18"></td>
 		</tr>
 		<tr>
 			<td>이메일 번호</td>
-			     <p>'@'포함한 이메일주소를 정확히 입력해주세요.</p>
-				<td><input type="text" name="uEmail" id="uEmail" required="required"></td>
+			<p>'@'포함한 이메일주소를 정확히 입력해주세요.</p>
+			<td><input type="text" name="uEmail" id="uEmail"
+				required="required"></td>
 		</tr>
 		<tr>
-			<td colspan="2" id="bn"><input type="submit" value="확인"> <input
-				type="button" value="취소"
+			<td colspan="2" id="bn"><input type="submit" value="확인">
+				<input type="button" value="취소"
 				onclick="javascript:window.location = 'indexPage.do'"></td>
 		</tr>
 	</table>

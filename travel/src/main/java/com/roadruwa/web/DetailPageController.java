@@ -39,6 +39,7 @@ private final Log logger = LogFactory.getLog(getClass());
 		return "detail";
 	}
 
+	//인기글
 	@RequestMapping("/popularity.do")
 	public String popularity(HttpServletRequest request, Model model, HttpSession session) {
 		String u_id = (String) session.getAttribute("u_id");

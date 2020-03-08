@@ -1,16 +1,12 @@
 package com.roadruwa.web;
 
 import java.io.File;
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
-import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import org.apache.catalina.authenticator.SavedRequest;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,7 +18,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
@@ -107,6 +102,7 @@ public class ContentController {
 		return "redirect:/buyPro.do?b_num=" + b_num;
 	}
 
+	//댓글 삭제
 	@RequestMapping("/cdelete.do")
 	public String cdelete(@RequestParam("b_num") int b_num, @RequestParam("c_num") int c_num) {
 		boardService.cdelete(c_num);
@@ -125,6 +121,7 @@ public class ContentController {
 		return "redirect:/myPage.do";
 	}
 		
+	//사용자 게시글 구매 여부
 	@RequestMapping("/buycheck.do")
 	public String buycheck(@RequestParam("b_num") String b_num, Model model, HttpSession session) {
 		String u_id = (String)session.getAttribute("u_id");
@@ -136,6 +133,7 @@ public class ContentController {
 		return "buycheck";
 	}
 	
+	//글구매
 	@RequestMapping("/userBuy.do")
 	public String userBuy(HttpSession session,@RequestParam("b_num") int b_num, @RequestParam("buyPrice") int buyPrice, BuyVo vo, PointVo point, Model model) {
 		String u_id = (String)session.getAttribute("u_id");
@@ -166,6 +164,7 @@ public class ContentController {
 	
 	}
 	
+	//댓글 수정
 	@RequestMapping(value ="/cupdate.do", method = RequestMethod.POST)
 	public String cupdate(@RequestParam("b_num") int b_num, @RequestParam("c_num") int c_num, HttpServletRequest request, HttpServletResponse response, HttpSession session, CommentVo vo, BindingResult bindingResult) throws Exception {
 		
@@ -190,7 +189,7 @@ public class ContentController {
 		return "redirect:/buyPro.do?b_num=" + b_num;
 	}
 	
-  
+    //게시글 등록
 	@RequestMapping(value = "/contentForm.do", method = RequestMethod.POST)
 	public String contentForm(BoardVo board, BindingResult bindingResult,BoardDayVo dayvo, BindingResult bindingResults, HttpServletRequest request, HttpServletResponse response,
 			HttpSession session) throws Exception {
@@ -245,7 +244,7 @@ public class ContentController {
 		return "redirect:/myPage.do";
 	}
 	
-	
+	//파일 업로드
 	@RequestMapping(value = "/Upload.do", method = RequestMethod.POST)
 	@ResponseBody
     public ResponseEntity<?> Upload(@RequestParam("file") MultipartFile file,HttpServletRequest request, HttpServletResponse response) {

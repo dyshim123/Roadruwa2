@@ -1,6 +1,9 @@
 package com.roadruwa.web;
 
+import java.io.File;
 import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.inject.Inject;
 import javax.mail.MessagingException;
@@ -18,20 +21,26 @@ import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartHttpServletRequest;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.roadruwa.comm.ExcelReader;
 import com.roadruwa.comm.UserException;
 import com.roadruwa.comm.web.EmailSender;
+import com.roadruwa.comm.web.FileUploader;
 import com.roadruwa.comm.web.MailUtils;
 import com.roadruwa.comm.web.TempKey;
 import com.roadruwa.service.PointService;
 import com.roadruwa.service.userService;
+import com.roadruwa.vo.CommentVo;
 import com.roadruwa.vo.Email;
+import com.roadruwa.vo.FileMng;
 import com.roadruwa.vo.PointVo;
 import com.roadruwa.vo.UserVo;
 @Controller
@@ -52,6 +61,8 @@ public class userController {
 
 	@Autowired
 	private JavaMailSender mailSender;
+	
+	ExcelReader excelReader;
      
 	@RequestMapping(value = "/loginCheck.do")
 	public String loginCheck(@ModelAttribute UserVo vo, Model model, HttpSession session) {
@@ -80,6 +91,7 @@ public class userController {
 		return "redirect:/indexPage.do";
 	}
 
+	//사용자 등록
 	@RequestMapping(value = "/insertUserVo.do", method = RequestMethod.POST)
 	@Transactional
 	public String insertUserVo(UserVo vo, Model model) throws Exception {
@@ -115,6 +127,7 @@ public class userController {
 		return "searchIdForm";
 	}
 
+	//아이디 찾기
 	@RequestMapping(value = "/searchId.do")
 	public String searchId(@ModelAttribute UserVo vo, Model model) {
 		UserVo result = userService.isIdCheck(vo.getuName(), vo.getuEmail());
@@ -140,6 +153,32 @@ public class userController {
 		return "redirect:/indexPage.do";
 	}
 
+	@RequestMapping(value ="/excelUploadAjax.do", method = RequestMethod.POST)
+	public String excelUploadAjax(HttpServletRequest request, HttpServletResponse response, HttpSession session) throws Exception {
+		
+		
+		 response.setContentType("text/plain");
+		  
+		  if (!(request instanceof MultipartHttpServletRequest)) { throw new
+		  UserException("dd"); }
+		
+    	String uploadPath = "D:\\upload";
+	    FileUploader fileUploader = new FileUploader();
+		List<FileMng> upFiles = fileUploader.uploadFile(request, response, uploadPath);
+		//System.out.println(uploadPath+"\\"+upFiles.get(0).getSavedNm());
+		
+		List<?> users = ((List<?>)excelReader.readExcelFile(uploadPath+"\\"+upFiles.get(0).getSavedNm(), UserVo.class));
+		for(Object obj : users ) {
+			if (obj instanceof UserVo ) {
+				//userMstService.insertUserMst((UserVo) obj, userMst);
+				userService.write((UserVo) obj);
+			}
+		}
+		System.out.println("완료");
+		
+		return "manager/user";
+	}
+	
 	
 	@RequestMapping(value = "/idcheck.do")
 	@ResponseBody

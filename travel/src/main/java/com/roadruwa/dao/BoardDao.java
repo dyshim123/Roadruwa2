@@ -12,6 +12,8 @@ import com.roadruwa.vo.CommentVo;
 import com.roadruwa.vo.MessageVo;
 
 public interface BoardDao {
+	
+	//게시글
 	public List<BoardVo> getBoardList(@Param("lotation")String lotation, @Param("day")Integer day,
 			@Param("cost")Integer cost, @Param("trans")String trans, @Param("tema")String tema,
 			@Param("search")String search);
@@ -32,6 +34,7 @@ public interface BoardDao {
     
     public List<BoardDayVo> contentdayview(@Param("b_num")String b_num);
     
+    //댓글
     public void commnetWrite(CommentVo vo);
     
     public List<CommentVo> commentview(@Param("b_num")String b_num);

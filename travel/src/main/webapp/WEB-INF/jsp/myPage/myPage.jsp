@@ -116,7 +116,7 @@
       </div>
    </div>
 </div> 
-	</div>
+</div>
 	<script src="../../assets/js/jquery.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
 	<%@ include file="../footer.jsp"%>

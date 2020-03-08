@@ -299,7 +299,7 @@ $(function(){
 		</c:if>
 		</c:forEach>
 	</div>
-	<script>
+			<script>
    function show(b_title, b_cate, u_id, b_day1, b_day2, b_ac, b_pic1, b_pic2,
          b_pic3, b_price, b_lo, b_num, u_ids) { 
 	
@@ -354,10 +354,9 @@ $(function(){
 	    	    	 return;
 	    	    }
       }
-	   
    }
    </script>
-    <br><br>
+			<br><br>
 	<hr>
 	<div class="row justify-content-center">
 	   <div class="col-3">
@@ -445,6 +444,4 @@ $(function(){
          </div>
       </div>
    </div>
-
-
-	<%@ include file="footer.jsp" %>
+<%@ include file="footer.jsp" %>

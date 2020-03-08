@@ -53,18 +53,6 @@ public class UserServiceImp implements userService {
 		userDao.write(vo);
 	}
 	
-//	@Override
-//	public void updateAuthkey(UserVo vo) {
-//		userDao.updateAuthkey(vo);
-//	}
-//	
-//	@Override
-//	public int updateAuthstatus(String uId) {
-//		int updateCunt = userDao.updateAuthstatus(uId);
-//		System.err.println("updateCunt::" + updateCunt);
-//		return updateCunt;
-//	}
-	
 	@Override
 	public UserVo isIdCheck(String uName, String uEmail) {
 		UserVo result = userDao.getUserCheck(uName, uEmail);

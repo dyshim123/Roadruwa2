@@ -379,8 +379,7 @@ function show(b_title, b_cate, u_id, b_day1, b_day2, b_ac, b_pic1, b_pic2,
    </div>
 </div>
 
-
-	<script src="../../assets/js/jquery.min.js"></script>
+<script src="../../assets/js/jquery.min.js"></script>
 <script src="https://unpkg.com/ionicons@4.4.4/dist/ionicons.js"></script>
 <script src="../../assets/js/breakpoints.min.js"></script>
-<%@ include file="footer.jsp" %>
+<%@ include file="footer.jsp"%>
