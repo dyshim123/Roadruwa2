@@ -17,7 +17,7 @@
 - 기술: MyBatis, JavaScript, jQuery, HTML, CSS
 - 데이터베이스 관리 도구: DBeaver
 
-수행조직
+수행 조직
 ----------
 - 팀장 심다영 /  팀원 2명 (총 3명)
 - 팀장: 데이터베이스 구축과 주요 기능 구현, 전체 구성원의 R&R을 정의, 과제 진척을 관리
@@ -71,7 +71,7 @@
 <h4>ㄴ. 기능구현 설명 </h4>
 <img src="https://user-images.githubusercontent.com/59246146/76489775-b4c0c800-646c-11ea-8c59-7924239dc021.png" width="450px">
 
-> 검색시 search함수에 카테고리의 select박스의 값들과 검색창의 text값을 변수로 받아 controller로 전달
+> 검색시 search함수에 카테고리의 SelectBox의 값들과 검색창의 Text값을 변수로 받아 Controller로 전달
 
 <img src="https://user-images.githubusercontent.com/59246146/76489953-28fb6b80-646d-11ea-82b2-e41c9850835c.png" width="830px">
  
@@ -79,7 +79,7 @@
 
 <img src="https://user-images.githubusercontent.com/59246146/76489963-2ac52f00-646d-11ea-8bdb-a235660a48c2.png" width="450px">
 
-> XML에 if문으로 만약 각 데이터가 null이 아닐경우 board테이블 List에 해당되는 값들을 저장
+> XML에 if문으로 만약 각각의 데이터가 null이 아닐경우 board테이블 List에 해당되는 값들을 저장
 
 <h3> 3. 게시글(작성)<br>
  
@@ -106,7 +106,7 @@
 <img src="https://user-images.githubusercontent.com/59246146/76491413-f3f11800-6470-11ea-9a11-500f565a01ab.png" width="830px">
 
 > RequestParam으로 받은 file을 FileUploader클래스의 uploadFile메소드를 사용해 file정보 저장<br>
-> DB에 Data 저장시 파일이 문자로 변환되어져 저장되기 때문에 용량이 비효율적인것을 막기위해 성공시 file의 경로와 savednm으로 저장
+> DB에 Data 저장시 파일이 문자로 변환되어져 저장되기 때문에 용량이 비효율적인것을 막기 위해 성공시 file의 경로와 savednm으로 저장
 
 <img src="https://user-images.githubusercontent.com/59246146/76491519-42061b80-6471-11ea-8fe1-771cb3142e93.png" width="400px">
 
@@ -134,7 +134,7 @@
 <img src="https://user-images.githubusercontent.com/59246146/76493844-f5254380-6476-11ea-99a9-ee436b4af5e7.png" width="400px">
  
  > 카카오API를 사용해 게시글 작성할때 입력했던 우편번호를 addr, 몇일차인지의 nday를 사용해 지도에 적용<br>
- > 몇일차인지에 따라 해당사항이 없는 일수의 Data는 none처리
+ > 일수에 따라 해당사항이 없는 일수의 Data는 none처리
 
 <h3> 4. 댓글(별점)<br>
  
