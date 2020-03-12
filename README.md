@@ -94,11 +94,13 @@
  > 여행 일수별로 가장 추천하는 여행지의 주소를 입력가능
  
  <h4>ㄴ. 기능구현 설명 </h4>
-<img src="https://user-images.githubusercontent.com/59246146/76490814-6bbe4300-646f-11ea-93e9-aecbdf3352a8.png" width="400px">&nbsp;
-<img src="https://user-images.githubusercontent.com/59246146/76490811-69f47f80-646f-11ea-9156-a4fc488be735.png" width="400px">
+<img src="https://user-images.githubusercontent.com/59246146/76490814-6bbe4300-646f-11ea-93e9-aecbdf3352a8.png" width="400px">
 
 > jQuery를 사용해 id가 tmplt1인 form을 일수에 따라 id가 rr인 곳에 적용<br>
 > summernote라는 에디터기는 비동기식 함수인 callback함수을 사용해 file를 첨부할때마다 sendFile함수를 작동<br>
+
+<img src="https://user-images.githubusercontent.com/59246146/76490811-69f47f80-646f-11ea-9156-a4fc488be735.png" width="400px">
+
 > sendFile함수는 file를 Ajax를 사용해 비동기식으로 데이터전달 
  
 <img src="https://user-images.githubusercontent.com/59246146/76491413-f3f11800-6470-11ea-9a11-500f565a01ab.png" width="830px">
