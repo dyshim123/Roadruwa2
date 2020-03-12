@@ -70,13 +70,7 @@ SpringFramework, MariaDB, MyBatis, jQuery, HTML5, CSS
  
 > 게시글을 구매시 게시글 사용가능<br>
 > 게시글을 구매하지 않았을 경우 모달을 통해 경로의 간단한 정보를 확인 후 구매 여부를 결정
- 
- 
- <img src="https://user-images.githubusercontent.com/59246146/73815126-54fd4e80-4828-11ea-977e-c875271d4c7c.png" width="500px">&nbsp;
 
-> 구매 후 구매한 게시글 사용가능
-
- 
  <구매 후><br>
  
  <img src="https://user-images.githubusercontent.com/59246146/73814029-30ec3e00-4825-11ea-867b-e08ba45663ab.png" width="400px">&nbsp;
