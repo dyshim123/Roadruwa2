@@ -125,18 +125,18 @@
 > 2 일차를 클릭시 2 일차의 추천 여행지 주소, 지도, 종류별 비용, 게시글을 볼 수 있음
  
  <img src="https://user-images.githubusercontent.com/59246146/73815664-fb961f00-4829-11ea-8f80-5ea78c9e59c9.png" width="400px" height="350px">&nbsp;
- <img src="https://user-images.githubusercontent.com/59246146/73815962-cccc7880-482a-11ea-87cd-0067ad001fc6.png" width="400px" height="350px">&nbsp;
+ <img src="https://user-images.githubusercontent.com/59246146/73815962-cccc7880-482a-11ea-87cd-0067ad001fc6.png" width="400px" height="350px">
  
  > 일수별 게시글을 볼 수 있음<br>
  
  <h4>ㄴ. 기능구현 설명 </h4>
-<img src="https://user-images.githubusercontent.com/59246146/76493837-f191bc80-6476-11ea-9fd9-0eed11bd19b2.png" width="450px" height="400px">&nbsp;
+<img src="https://user-images.githubusercontent.com/59246146/76493837-f191bc80-6476-11ea-9fd9-0eed11bd19b2.png" width="400px" height="400px">&nbsp;
 <img src="https://user-images.githubusercontent.com/59246146/76493844-f5254380-6476-11ea-99a9-ee436b4af5e7.png" width="400px">
  
  > 카카오API를 사용해 게시글 작성할때 입력했던 우편번호를 addr, 몇일차인지의 nday를 사용해 지도에 적용<br>
  > 몇일차인지에 따라 해당사항이 없는 일수의 Data는 none처리
 
-<h3> 4. 댓글<br>
+<h3> 4. 댓글(별점)<br>
  
 <img src="https://user-images.githubusercontent.com/59246146/74009212-1b624a00-49c6-11ea-89b3-5bae0aea64a3.png" width="400px" height="250px">&nbsp;
 <img src="https://user-images.githubusercontent.com/59246146/74009110-dc33f900-49c5-11ea-99c3-3ffefe368757.png" width="400px" height="250px">&nbsp;
@@ -146,8 +146,6 @@
 > 구매한 게시글의 후기와 질문을 댓글로 작성가능 (자신의 글만 수정/삭제)<br>
 > 게시글의 작성자는 자신의 글에 댓글을 달 수 없음 (자신의 글에 댓글을 달아 글 가격 올림 방지)<br>
 
-<h3> 5. 별점<br>
- 
 <img src="https://user-images.githubusercontent.com/59246146/74009660-0afe9f00-49c7-11ea-871e-27576573e7e8.png" width="200px" height="150px">&nbsp;&nbsp;&nbsp;
 <img src="https://user-images.githubusercontent.com/59246146/74009560-ce32a800-49c6-11ea-8bc0-d0c081b660fb.png" width="400px" height="300px">&nbsp;
 
@@ -155,7 +153,6 @@
 
 > 글의 가격은 별점으로 측정<br>
 > 글의 총 별점이 50개당 100원씩 증가<br>
-> 예를 들어 글의 총 별점이 50개 미만 0원, 50개는 100원, 100개는 200원으로 측정<br>
 
 <h3> 6. 포인트(카카오페이)<br>
 
@@ -171,10 +168,8 @@
 <img src="https://user-images.githubusercontent.com/59246146/76516888-99bb7b80-649f-11ea-8244-19d1f0ff4aca.png" width="600px">
 
 > 무료 결제연동 서비스를 제공하는 아임포트에서 부여받은 가맹점 식별코드를 입력<br>
-> 구매button 클릭 -> text박스의 id인 pay의 값을 result로 받은 후 IMP.request_pay()함수를 호출<br>
-
-<img src="https://user-images.githubusercontent.com/59246146/76512746-953f9480-6498-11ea-9dda-152a84333c45.png" width="700px">
-
+> Text박스의 id인 pay의 값을 result로 받은 후 IMP.request_pay()함수를 호출<br>
+> 성공시 AJAX를 사용해 필요한 Data를 컨트롤러로 넘김
 
 마치며
 ------
