@@ -58,7 +58,7 @@ SpringFramework, MariaDB, MyBatis, jQuery, HTML5, CSS
 <h4>ㄴ. 기능구현 설명 </h4> <br>
 <img src="https://user-images.githubusercontent.com/59246146/76489775-b4c0c800-646c-11ea-8c59-7924239dc021.png" width="450px">
 
-> 검색시 search함수의 text값과 select값들을 변수로 저장
+> 검색시 search함수에 카테고리의 select박스의 값들과 검색창의 text값을 변수로 받아 controller로 전달
 
 <img src="https://user-images.githubusercontent.com/59246146/76489953-28fb6b80-646d-11ea-82b2-e41c9850835c.png" width="830px">
  
@@ -86,12 +86,12 @@ SpringFramework, MariaDB, MyBatis, jQuery, HTML5, CSS
 <img src="https://user-images.githubusercontent.com/59246146/76490811-69f47f80-646f-11ea-9156-a4fc488be735.png" width="400px">
 
 > jQuery를 사용해 id가 tmplt1인 form을 일수에 따라 id가 rr인 곳에 적용<br>
-> summernote라는 에디터기는 callback을 사용해 file을 첨부할때마다 sendFile를 작동<br>
-> sendFile은 file을 ajax를 이용해 비동기식으로 file을 저장
+> summernote라는 에디터기는 비동기식 함수인 callback함수을 사용해 file를 첨부할때마다 sendFile함수를 작동<br>
+> sendFile함수는 file를 Ajax를 사용해 비동기식으로 데이터전달 
  
 <img src="https://user-images.githubusercontent.com/59246146/76491413-f3f11800-6470-11ea-9a11-500f565a01ab.png" width="830px">
 
-> ResponseEntity로 받은 file을 FileUploader클래스의 uploadFile를 사용해 file정보 저장<br>
+> RequestParam으로 받은 file을 FileUploader클래스의 uploadFile메소드를 사용해 file정보 저장<br>
 > DB에 Data 저장시 파일이 문자로 변환되어져 저장되기 때문에 용량이 비효율적인것을 막기위해 성공시 file의 경로와 savednm으로 저장
 
 <img src="https://user-images.githubusercontent.com/59246146/76491519-42061b80-6471-11ea-8fe1-771cb3142e93.png" width="400px">
