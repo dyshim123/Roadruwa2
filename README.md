@@ -22,7 +22,7 @@ SpringFramework, MariaDB, MyBatis, jQuery, HTML5, CSS
 제가 구현한 주요 기능 설명
 ------
 
-<h3> 1. 회원가입<br>
+<h3> 1. 회원가입(이메일인증)
 
 <img src="https://user-images.githubusercontent.com/59246146/73720658-d17b2900-4765-11ea-946e-ef3df9e1ccea.png" width="180px">&nbsp;&nbsp;
 <img src="https://user-images.githubusercontent.com/59246146/73722618-3f295400-476a-11ea-98c0-2b123d33e7e2.png" width="300px" height="350px">&nbsp;
@@ -153,6 +153,20 @@ SpringFramework, MariaDB, MyBatis, jQuery, HTML5, CSS
 <h4>ㄱ. 설명 </h4>
 
 > TextBox를 통해 금액을 입력 후 카카오페이로 금액 결제가능<br>
+
+<h4>ㄴ. 기능구현 설명 </h4>
+
+<img src="https://user-images.githubusercontent.com/59246146/76512730-8f49b380-6498-11ea-87f9-8af1575c3e27.png" width="600px">
+
+> 무료 결제연동 서비스를 제공하는 아임포트에서 식별자코드를 발급받음
+
+<img src="https://user-images.githubusercontent.com/59246146/76516888-99bb7b80-649f-11ea-8244-19d1f0ff4aca.png" width="600px">
+
+> 부여받은 가맹점 식별코드를 입력<br>
+> 구매button 클릭 -> text박스의 id인 pay의 값을 result로 받은 후 IMP.request_pay()함수를 호출<br>
+
+<img src="https://user-images.githubusercontent.com/59246146/76512746-953f9480-6498-11ea-9dda-152a84333c45.png" width="700px">
+
 
 <h3> 6. 관리자<br>
 (관리자ID : 관리자 / pw: 1234)<br>
