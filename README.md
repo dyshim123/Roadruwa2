@@ -58,7 +58,7 @@ SpringFramework, MariaDB, MyBatis, jQuery, HTML5, CSS
 <h4>ㄴ. 기능구현 설명 </h4> <br>
 <img src="https://user-images.githubusercontent.com/59246146/76489775-b4c0c800-646c-11ea-8c59-7924239dc021.png" width="450px">
 
-> text값과 select값들을 값전달
+> 검색시 search함수의 text값과 select값들을 변수로 저장
 
 <img src="https://user-images.githubusercontent.com/59246146/76489953-28fb6b80-646d-11ea-82b2-e41c9850835c.png" width="830px">
  
