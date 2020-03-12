@@ -60,13 +60,13 @@ SpringFramework, MariaDB, MyBatis, jQuery, HTML5, CSS
 
 > text값과 select값들을 serch메소드를 통해 값전달
 
-<img src="https://user-images.githubusercontent.com/59246146/76489953-28fb6b80-646d-11ea-82b2-e41c9850835c.png" width="450px">
+<img src="https://user-images.githubusercontent.com/59246146/76489953-28fb6b80-646d-11ea-82b2-e41c9850835c.png" width="550px">
  
 > RequestParam으로 데이터를 받아 getBoardList메소드의 변수로 대입
 
 <img src="https://user-images.githubusercontent.com/59246146/76489963-2ac52f00-646d-11ea-8bdb-a235660a48c2.png" width="450px">
 
-> if문으로 만약 각 데이터가 null이 아닐경우 board테이블 List에 해당되는 값들을 저장
+> XML에 if문으로 만약 각 데이터가 null이 아닐경우 board테이블 List에 해당되는 값들을 저장
 
 <h3> 3. 게시글(작성)<br>
  
@@ -120,7 +120,7 @@ SpringFramework, MariaDB, MyBatis, jQuery, HTML5, CSS
 <img src="https://user-images.githubusercontent.com/59246146/76493837-f191bc80-6476-11ea-9fd9-0eed11bd19b2.png" width="450px" height="400px">&nbsp;
 <img src="https://user-images.githubusercontent.com/59246146/76493844-f5254380-6476-11ea-99a9-ee436b4af5e7.png" width="400px">
  
- > 카카오API를 사용해 게시글 작성할때 입력했던 우편번호를 addr, 몇일차인지의 nday를 사용해 지도에 적용<>
+ > 카카오API를 사용해 게시글 작성할때 입력했던 우편번호를 addr, 몇일차인지의 nday를 사용해 지도에 적용<br>
  > 몇일차인지에 따라 해당사항이 없는 일수의 Data는 none처리
 
 <h3> 4. 댓글<br>
