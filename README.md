@@ -19,78 +19,116 @@ SpringFramework, MariaDB, MyBatis, jQuery, HTML5, CSS
 - 다른 팀원: 각자 화면 구성 및 기능 개발을 담당
 - 주요 기능 테스트 및 품질 검토: 팀장, 강사님
 
-주요 기능 설명
+제가 구현한 주요 기능 설명
 ------
-기존 졸업작품의 기능에 좀 더 추가하였습니다!<br>
 
-- 회원가입<br>
+<h3> 1. 회원가입<br>
 
 <img src="https://user-images.githubusercontent.com/59246146/73720658-d17b2900-4765-11ea-946e-ef3df9e1ccea.png" width="180px">&nbsp;&nbsp;
 <img src="https://user-images.githubusercontent.com/59246146/73722618-3f295400-476a-11ea-98c0-2b123d33e7e2.png" width="300px" height="350px">&nbsp;
 <img src="https://user-images.githubusercontent.com/59246146/73722899-f7ef9300-476a-11ea-8873-d4079387b85b.png" width="350px" height="50px">&nbsp;
 
-> 아이디 중복확인을 해야만 회원가입 버튼이 활성화 / 이메일 인증후 회원가입 완료<br>
+<h4>ㄱ. 설명 </h4>
+
+> 아이디 중복확인시 회원가입 버튼이 활성화 / 이메일 인증후 회원가입 완료<br>
 > 회원가입시 500포인트 적립
 
- - 검색<br>
- 
- <img src="https://user-images.githubusercontent.com/59246146/73750348-5b47e800-47a0-11ea-9842-ebcc81898456.png" width="400px">&nbsp;
- <img src="https://user-images.githubusercontent.com/59246146/73751497-964b1b00-47a2-11ea-9693-1aa12ffcd789.png" width="400px">
- 
-> 관리자의 승인처리가 되지 않은 게시물은 검색불가
+<h4>ㄴ. 기능구현 설명 </h4> <br>
+<img src="https://user-images.githubusercontent.com/59246146/76487347-7c69bb80-6465-11ea-82e3-61a7939c45d8.png" width="450px">
 
+> Spring설정하는 xml파일에 gmail인증 Baen을 추가<br>
+> Mail전송시 필요한 기본정보 입력
+
+<img src="https://user-images.githubusercontent.com/59246146/76487354-81c70600-6465-11ea-9e85-f253ffa40f3c.png" width="450px">&nbsp;
+<img src="https://user-images.githubusercontent.com/59246146/76488639-62ca7300-6469-11ea-8d34-8fca35651f06.png" width="350px">
+
+> Controller에서 MailUtils class선언 후 객체의 데이터 저장<br>
+> Mail전송시 Authstatus의 값 0 -> 링크 클릭시 Authstatus의 값 1 update<br>
+> 로그인시 Authstatus의 값 1인 사람만 가능
+
+<h3> 2. 검색<br>
  
- <img src="https://user-images.githubusercontent.com/59246146/73751770-18d3da80-47a3-11ea-8c69-d50f87551e26.png" width="300px">
+<img src="https://user-images.githubusercontent.com/59246146/73750348-5b47e800-47a0-11ea-9842-ebcc81898456.png" width="400px">&nbsp; <img src="https://user-images.githubusercontent.com/59246146/73751770-18d3da80-47a3-11ea-8c69-d50f87551e26.png" width="300px">
+  
+<h4>ㄱ. 설명 </h4>
  
-> 지역, 여행일수, 교통, 경비, 테마 별로 검색 / 관리자의 승인처리 되지 않은 게시물 검색불가<br>
+> 관리자의 승인처리가 되지 않은 게시물은 검색불가<br>
+> 지역, 여행일수, 교통, 경비, 테마 별로 검색
  
+<h4>ㄴ. 기능구현 설명 </h4> <br>
+<img src="https://user-images.githubusercontent.com/59246146/76489775-b4c0c800-646c-11ea-8c59-7924239dc021.png" width="450px">
+
+> text값과 select값들을 serch메소드를 통해 값전달
+
+<img src="https://user-images.githubusercontent.com/59246146/76489953-28fb6b80-646d-11ea-82b2-e41c9850835c.png" width="450px">
  
- - 게시글 작성<br>
- 
- <img src="https://user-images.githubusercontent.com/59246146/73812677-06988180-4821-11ea-9ce1-2d9657f4327f.png" width="300px">
- 
-> 작성할 경로의 제목, 여행지 사진 3개를 입력 가능<br>
-> Selectbox를 사용한 카테고리 선택, 지역, 교통을 입력가능
+> RequestParam으로 데이터를 받아 getBoardList메소드의 변수로 대입
+
+<img src="https://user-images.githubusercontent.com/59246146/76489963-2ac52f00-646d-11ea-8bdb-a235660a48c2.png" width="450px">
+
+> if문으로 만약 각 데이터가 null이 아닐경우 board테이블 List에 해당되는 값들을 저장
+
+<h3> 3. 게시글(작성)<br>
  
  <img src="https://user-images.githubusercontent.com/59246146/73812918-cede0980-4821-11ea-8a80-6bb7a841a2d4.png" width="400px">&nbsp;
- <img src="https://user-images.githubusercontent.com/59246146/73812848-98a08a00-4821-11ea-96d4-cd289f7476a5.png" width="400px">
+ <img src="https://user-images.githubusercontent.com/59246146/73812848-98a08a00-4821-11ea-96d4-cd289f7476a5.png" width="450px">
+ 
+ <h4>ㄱ. 설명 </h4>
  
  > 작성할 여행 경로의 일수에 따라 게시글 양식이 동적으로 생성<br>
  > 여행 일수별로 여행비, 식비, 교통비, 숙박비를 입력<br>
  > 여행 일수별로 Summernote라는 에디터를 사용하여 유연성 있는 게시글을 작성<br>
  > 여행 일수별로 가장 추천하는 여행지의 주소를 입력가능
  
+ <h4>ㄴ. 기능구현 설명 </h4> <br>
  
- - 게시글<br>
- 
- <구매 전><br>
- 
- <img src="https://user-images.githubusercontent.com/59246146/73814881-a6f1a480-4827-11ea-86bc-0c09d9151933.png" width="400px">&nbsp;&nbsp;
- <img src="https://user-images.githubusercontent.com/59246146/73814892-ad801c00-4827-11ea-8d2e-36934540c955.png" width="300px">&nbsp;
- 
-> 게시글을 구매시 게시글 사용가능<br>
-> 게시글을 구매하지 않았을 경우 모달을 통해 경로의 간단한 정보를 확인 후 구매 여부를 결정
+<img src="https://user-images.githubusercontent.com/59246146/76490814-6bbe4300-646f-11ea-93e9-aecbdf3352a8.png" width="400px">&nbsp;
+<img src="https://user-images.githubusercontent.com/59246146/76490811-69f47f80-646f-11ea-9156-a4fc488be735.png" width="400px">
 
- <구매 후><br>
+> jQuery를 사용해 id가 tmplt1인 form을 일수에 따라 id가 rr인 곳에 적용<br>
+> summernote라는 에디터기는 callback을 사용해 file을 첨부할때마다 sendFile메소드를 작동<br>
+> sendFile메소드는 file을 ajax를 이용해 비동기식으로 file을 저장
  
+<img src="https://user-images.githubusercontent.com/59246146/76491413-f3f11800-6470-11ea-9a11-500f565a01ab.png" width="400px">
+
+> ResponseEntity로 받은 file을 FileUploader클래스의 uploadFile메소드를 사용해 file정보 저장<br>
+> DB에 Data 저장시 파일이 문자로 변환되어져 저장되기 때문에 용량이 비효율적인것을 막기위해 성공시 file의 경로와 savednm으로 저장
+
+<img src="https://user-images.githubusercontent.com/59246146/76491519-42061b80-6471-11ea-8fe1-771cb3142e93.png" width="400px">
+
+> 동적으로 받은 Data를 getParameterValues를 이용해 배열로 저장 후 for문을 사용해 BoardDay테이블에 저장 
+
+<h3> 3. 게시글(view)<br>
+
  <img src="https://user-images.githubusercontent.com/59246146/73814029-30ec3e00-4825-11ea-867b-e08ba45663ab.png" width="400px">&nbsp;
  <img src="https://user-images.githubusercontent.com/59246146/73814176-9d673d00-4825-11ea-9112-3679a9c03599.png" width="400px">
+ 
+ <h4>ㄱ. 설명 </h4>
  
 > ex) 1박 2일의 여행 게시글<br>
 > 등록된 여행 일수별로 작성됨<br>
 > 처음에 1일 차로 초기화되어있으며 1 일차의 추천 여행지 주소, 지도, 종류별 비용, 게시글을 볼 수 있음<br>
 > 2 일차를 클릭시 2 일차의 추천 여행지 주소, 지도, 종류별 비용, 게시글을 볼 수 있음
  
- 
  <img src="https://user-images.githubusercontent.com/59246146/73815664-fb961f00-4829-11ea-8f80-5ea78c9e59c9.png" width="400px" height="350px">&nbsp;
  <img src="https://user-images.githubusercontent.com/59246146/73815962-cccc7880-482a-11ea-87cd-0067ad001fc6.png" width="400px" height="350px">&nbsp;
  
  > 일수별 게시글을 볼 수 있음<br>
  
- - 댓글<br>
+ <h4>ㄴ. 기능구현 설명 </h4>
  
- <img src="https://user-images.githubusercontent.com/59246146/74009212-1b624a00-49c6-11ea-89b3-5bae0aea64a3.png" width="400px" height="250px">&nbsp;
+<img src="https://user-images.githubusercontent.com/59246146/76493837-f191bc80-6476-11ea-9fd9-0eed11bd19b2.png" width="450px" height="400px">&nbsp;
+<img src="https://user-images.githubusercontent.com/59246146/76493844-f5254380-6476-11ea-99a9-ee436b4af5e7.png" width="400px">
+ 
+ > 카카오API를 사용해 게시글 작성할때 입력했던 우편번호를 addr, 몇일차인지의 nday를 사용해 지도에 적용<>
+ > 몇일차인지에 따라 해당사항이 없는 일수의 Data는 none처리
+
+<h3> 4. 댓글<br>
+ 
+<img src="https://user-images.githubusercontent.com/59246146/74009212-1b624a00-49c6-11ea-89b3-5bae0aea64a3.png" width="400px" height="250px">&nbsp;
 <img src="https://user-images.githubusercontent.com/59246146/74009110-dc33f900-49c5-11ea-99c3-3ffefe368757.png" width="400px" height="250px">&nbsp;
+
+<h4>ㄱ. 설명 </h4>
 
 > 구매한 게시글의 후기와 질문을 댓글로 작성가능<br>
 > (자신의 글만 수정/삭제 할 수 있습니다.)<br>
@@ -98,41 +136,39 @@ SpringFramework, MariaDB, MyBatis, jQuery, HTML5, CSS
 > 게시글의 작성자는 자신의 글에 댓글을 달 수 없음<br>
 > ( 자신의 글에 댓글을 달아 글 가격 올림 방지)
 
- - 별점<br>
+<h3> 5. 별점<br>
  
 <img src="https://user-images.githubusercontent.com/59246146/74009660-0afe9f00-49c7-11ea-871e-27576573e7e8.png" width="200px" height="150px">&nbsp;&nbsp;&nbsp;
 <img src="https://user-images.githubusercontent.com/59246146/74009560-ce32a800-49c6-11ea-8bc0-d0c081b660fb.png" width="400px" height="300px">&nbsp;
+
+<h4>ㄱ. 설명 </h4>
 
 > 글의 가격은 별점으로 측정<br>
 > 글의 총 별점이 50개당 100원씩 증가<br>
 > 예를 들어 글의 총 별점이 50개 미만 0원, 50개는 100원, 100개는 200원으로 측정<br>
 
-
-- 포인트(추가: 카카오페이) <br>
-(경로: 로그인 후 -> 마이페이지 -> 포인트 ->충전하기 버튼)<br>
+<h3> 6. 포인트(카카오페이)<br>
 
 <img src="https://user-images.githubusercontent.com/59246146/74011430-2c618a00-49cb-11ea-9a70-48d04a18c8d2.png" width="350px" height="250px">&nbsp;
 <img src="https://user-images.githubusercontent.com/59246146/74011435-2d92b700-49cb-11ea-94af-bd0f5eb9b423.png" width="200px" height="250px">&nbsp;
 <img src="https://user-images.githubusercontent.com/59246146/74011444-32576b00-49cb-11ea-8320-5ce0452ef3d5.png" width="270px" height="250px">&nbsp;
 
+<h4>ㄱ. 설명 </h4>
+
 > TextBox를 통해 금액을 입력 후 카카오페이로 금액 결제가능<br>
 
-- 관리자(추가: 차트) <br>
+<h3> 6. 관리자<br>
 (관리자ID : 관리자 / pw: 1234)<br>
 
 <img src="https://user-images.githubusercontent.com/59246146/74011959-7434e100-49cc-11ea-96bf-5e867f913435.png" width="250px" height="300px">&nbsp;&nbsp;&nbsp;
 <img src="https://user-images.githubusercontent.com/59246146/74012238-194fb980-49cd-11ea-946d-036d3b0fcfc2.png" width="250px" height="300px">&nbsp;&nbsp;&nbsp;
 <img src="https://user-images.githubusercontent.com/59246146/74011965-76973b00-49cc-11ea-982d-630cdaa02f3d.png" width="250px" height="300px">&nbsp;
 
+<h4>ㄱ. 설명 </h4>
+
 > 카테고리별 글 등록 수를 차트로 볼 수 있음<br>
 > 관리자는 월별로 카테고리 글 등록 수를 차트로 볼 수 있음<br>
 > 관리자는 지역별 글 등록 수를 차트로 볼 수 있음
-
-<img src="https://user-images.githubusercontent.com/59246146/74012400-83685e80-49cd-11ea-8bff-5b01649c3898.png" width="600px" height="250px">&nbsp;
-
-> 관리자는 사용자가 글 등록을 한 후 게시글을 검토하여 승인/미승인 처리가능<br>
-> 관리자가 미승인 시 게시글을 사용자들이 볼 수 없음
-
 
 마치며
 ------
