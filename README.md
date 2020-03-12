@@ -8,18 +8,31 @@
 --------
 이 프로젝트는 여행 계획 수립시간이 부족하거나 많은 여행정보의 선택에 어려움이 있는 사람을 위한 여행 경로 공유 홈페이지입니다. Spring Framework를 접하게 되면서 순수 자바로만 코딩한 졸업작품 홈페이지의 문제점이 많이 보였습니다. 같은 코드 반복으로 재사용성이 떨어졌고 후에 수정할 때 전부 수정이 필요해 불편함이 있어 리펙토링의 필요성을 느꼈습니다. 이로 인해 기존에 다뤘던 주제로 기술적인 면을 업그레이드하고 싶어 동일한 주제를 선정하였습니다.
 
-기술
+구현 기술
 --------
-SpringFramework, MariaDB, MyBatis, jQuery, HTML5, CSS
+- 사용(개발) 언어 : JAVA
+- 프레임워크 : Spring Framework
+- 사용(개발)  툴 : ECLIPSE
+- DB : MariaDB
+- 기술: MyBatis, JavaScript, jQuery, HTML, CSS
+- 데이터베이스 관리 도구: DBeaver
 
-프로젝트 설계 및 계획
+수행조직
 ----------
 - 팀장 심다영 /  팀원 2명 (총 3명)
 - 팀장: 데이터베이스 구축과 주요 기능 구현, 전체 구성원의 R&R을 정의, 과제 진척을 관리
 - 다른 팀원: 각자 화면 구성 및 기능 개발을 담당
 - 주요 기능 테스트 및 품질 검토: 팀장, 강사님
 
-제가 구현한 주요 기능 설명
+주요 기능
+------
+- 회원가입 (이메일 인증)
+- 검색 (검색별 / 카테고리별)
+- 게시글 (카카오API 지도 / 우편 / 에디터(Summernote))
+- 댓글 (별점부여)
+- 포인트 (카카오페이)
+
+상세설명
 ------
 
 <h3> 1. 회원가입(이메일인증)
@@ -33,7 +46,7 @@ SpringFramework, MariaDB, MyBatis, jQuery, HTML5, CSS
 > 아이디 중복확인시 회원가입 버튼이 활성화 / 이메일 인증후 회원가입 완료<br>
 > 회원가입시 500포인트 적립
 
-<h4>ㄴ. 기능구현 설명 </h4> <br>
+<h4>ㄴ. 기능구현 설명 </h4>
 <img src="https://user-images.githubusercontent.com/59246146/76487347-7c69bb80-6465-11ea-82e3-61a7939c45d8.png" width="450px">
 
 > Spring설정하는 xml파일에 gmail인증 Baen을 추가<br>
@@ -55,7 +68,7 @@ SpringFramework, MariaDB, MyBatis, jQuery, HTML5, CSS
 > 관리자의 승인처리가 되지 않은 게시물은 검색불가<br>
 > 지역, 여행일수, 교통, 경비, 테마 별로 검색
  
-<h4>ㄴ. 기능구현 설명 </h4> <br>
+<h4>ㄴ. 기능구현 설명 </h4>
 <img src="https://user-images.githubusercontent.com/59246146/76489775-b4c0c800-646c-11ea-8c59-7924239dc021.png" width="450px">
 
 > 검색시 search함수에 카테고리의 select박스의 값들과 검색창의 text값을 변수로 받아 controller로 전달
@@ -80,8 +93,7 @@ SpringFramework, MariaDB, MyBatis, jQuery, HTML5, CSS
  > 여행 일수별로 Summernote라는 에디터를 사용하여 유연성 있는 게시글을 작성<br>
  > 여행 일수별로 가장 추천하는 여행지의 주소를 입력가능
  
- <h4>ㄴ. 기능구현 설명 </h4> <br>
- 
+ <h4>ㄴ. 기능구현 설명 </h4>
 <img src="https://user-images.githubusercontent.com/59246146/76490814-6bbe4300-646f-11ea-93e9-aecbdf3352a8.png" width="400px">&nbsp;
 <img src="https://user-images.githubusercontent.com/59246146/76490811-69f47f80-646f-11ea-9156-a4fc488be735.png" width="400px">
 
@@ -116,7 +128,6 @@ SpringFramework, MariaDB, MyBatis, jQuery, HTML5, CSS
  > 일수별 게시글을 볼 수 있음<br>
  
  <h4>ㄴ. 기능구현 설명 </h4>
- 
 <img src="https://user-images.githubusercontent.com/59246146/76493837-f191bc80-6476-11ea-9fd9-0eed11bd19b2.png" width="450px" height="400px">&nbsp;
 <img src="https://user-images.githubusercontent.com/59246146/76493844-f5254380-6476-11ea-99a9-ee436b4af5e7.png" width="400px">
  
@@ -155,31 +166,13 @@ SpringFramework, MariaDB, MyBatis, jQuery, HTML5, CSS
 > TextBox를 통해 금액을 입력 후 카카오페이로 금액 결제가능<br>
 
 <h4>ㄴ. 기능구현 설명 </h4>
-
-<img src="https://user-images.githubusercontent.com/59246146/76512730-8f49b380-6498-11ea-87f9-8af1575c3e27.png" width="600px">
-
-> 무료 결제연동 서비스를 제공하는 아임포트에서 식별자코드를 발급받음
-
 <img src="https://user-images.githubusercontent.com/59246146/76516888-99bb7b80-649f-11ea-8244-19d1f0ff4aca.png" width="600px">
 
-> 부여받은 가맹점 식별코드를 입력<br>
+> 무료 결제연동 서비스를 제공하는 아임포트에서 부여받은 가맹점 식별코드를 입력<br>
 > 구매button 클릭 -> text박스의 id인 pay의 값을 result로 받은 후 IMP.request_pay()함수를 호출<br>
 
 <img src="https://user-images.githubusercontent.com/59246146/76512746-953f9480-6498-11ea-9dda-152a84333c45.png" width="700px">
 
-
-<h3> 6. 관리자<br>
-(관리자ID : 관리자 / pw: 1234)<br>
-
-<img src="https://user-images.githubusercontent.com/59246146/74011959-7434e100-49cc-11ea-96bf-5e867f913435.png" width="250px" height="300px">&nbsp;&nbsp;&nbsp;
-<img src="https://user-images.githubusercontent.com/59246146/74012238-194fb980-49cd-11ea-946d-036d3b0fcfc2.png" width="250px" height="300px">&nbsp;&nbsp;&nbsp;
-<img src="https://user-images.githubusercontent.com/59246146/74011965-76973b00-49cc-11ea-982d-630cdaa02f3d.png" width="250px" height="300px">&nbsp;
-
-<h4>ㄱ. 설명 </h4>
-
-> 카테고리별 글 등록 수를 차트로 볼 수 있음<br>
-> 관리자는 월별로 카테고리 글 등록 수를 차트로 볼 수 있음<br>
-> 관리자는 지역별 글 등록 수를 차트로 볼 수 있음
 
 마치며
 ------
