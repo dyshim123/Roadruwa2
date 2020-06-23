@@ -49,13 +49,13 @@
 <h4>ㄴ. 기능구현 설명 </h4>
 <img src="https://user-images.githubusercontent.com/59246146/76487347-7c69bb80-6465-11ea-82e3-61a7939c45d8.png" width="450px">
 
-> Spring설정하는 xml파일에 gmail인증 Baen을 추가<br>
-> Mail전송시 필요한 기본정보 입력
+> 자바 API인 JavaMail을 사용 -> pom.xml에 추가<br>
+> Spring설정하는 xml파일에 gmail인증 Baen을 추가
 
 <img src="https://user-images.githubusercontent.com/59246146/76487354-81c70600-6465-11ea-9e85-f253ffa40f3c.png" width="450px">&nbsp;
 <img src="https://user-images.githubusercontent.com/59246146/76488639-62ca7300-6469-11ea-8d34-8fca35651f06.png" width="350px">
 
-> Controller에서 MailUtils class선언 후 객체의 데이터 저장<br>
+> Controller에서 MailUtils 객체 생성 후 append로 데이터 저장<br>
 > Mail전송시 Authstatus의 값 0 -> 링크 클릭시 Authstatus의 값 1 update<br>
 > 로그인시 Authstatus의 값 1인 사람만 가능
 
