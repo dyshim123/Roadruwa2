@@ -47,7 +47,7 @@
 > 회원가입시 500포인트 적립
 
 <h4>ㄴ. 기능구현 설명 </h4>
-<img src="https://user-images.githubusercontent.com/59246146/76487347-7c69bb80-6465-11ea-82e3-61a7939c45d8.png" width="450px">
+<img src="https://user-images.githubusercontent.com/59246146/85358232-2e794f00-b54e-11ea-863f-3a11fbfd56fa.png" width="450px">
 
 > 자바 API인 JavaMail을 사용 -> pom.xml에 추가<br>
 > Spring설정하는 xml파일에 gmail인증 Baen을 추가
